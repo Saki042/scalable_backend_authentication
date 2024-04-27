@@ -1,0 +1,12 @@
+# Use the official MySQL 5.7 image as base
+FROM mysql:5.7
+
+# Set environment variables
+ENV MYSQL_ROOT_PASSWORD=yourpasswd
+ENV MYSQL_DATABASE=BookShare
+
+# Expose port 3306 to allow external connections
+EXPOSE 3306
+
+# Copy the SQL script to create the database schema
+COPY database.sql /docker-entrypoint-initdb.d/
