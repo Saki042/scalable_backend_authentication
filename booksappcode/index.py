@@ -9,7 +9,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sqlite_container/database.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:yourpasswd@myql:3306/database.sql'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
